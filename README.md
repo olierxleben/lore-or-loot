@@ -1,4 +1,29 @@
-# Astro Starter Kit: Basics
+# Lore or Loot
+
+Welcome to Lore or Loot, the social story driven RPG Web App.
+Beware, this Software is in early stages and under active development. 
+
+## Project Vision
+
+This should be a "game" for people who love to read stories and be part of the story. Think of old D&D interactive books
+for the digital age. It is also a platform for writers and lovers of fictional content. The project aims to provide authors a framework and ruleset to develop awesome 
+adventures in a fictional world. For players it will be an open platform. 
+
+The game will use agile methods to be developed and it uses modern software development methods (like PRs) to integrate
+new content for the game.
+
+## Tech Stack:
+
+The frontend is coded using Astro and its island architecture. It allows a static generated website to be build. 
+New content is developed using Markdown flavors (tbd.)
+
+### Todos
+
+- [ ] Backend to use
+- [ ] Framework Base
+- [ ] Fictional Base (Sci Fi, Fantasy, Mix, different flavors)
+
+### Astro Starter Kit: Basics
 
 ```
 npm create astro@latest -- --template basics
@@ -13,7 +38,7 @@ npm create astro@latest -- --template basics
 ![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
 
 
-## 🚀 Project Structure
+#### 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
 
@@ -37,7 +62,7 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
-## 🧞 Commands
+### 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -50,6 +75,6 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+### 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
