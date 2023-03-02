@@ -1,0 +1,33 @@
+---
+title: Dungeon - Goblin Trader
+author: keppla
+---
+
+import { Shop } from "../../../components/shop";
+
+---
+
+## A Dungeon, like many before
+### Goblin Trader
+
+On a dirty burlap sack, spread on some wood crates, there are some wares on display.
+A little green creature looks at you with a mixture of suspicion and greed.
+
+A door leads back to the [🚪entry hall](entry).
+
+<Shop
+    client:load
+    stock={ [
+        {
+            name: "Sword",
+            price: 5,
+            amount: 1
+        },
+        {
+            name: "Health Potion",
+            price: 2,
+            amount: 5
+        }
+    ] }
+
+/>
