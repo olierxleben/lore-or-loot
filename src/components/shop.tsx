@@ -1,8 +1,9 @@
 import type {FunctionalComponent} from "preact";
 import { useState, useCallback } from "preact/hooks";
+import { addInventoryItem, substractWealth, wealth } from '../engine/Inventory'
+import { useStore } from '@nanostores/preact';
 
 interface Props {
-
     stock: {
         name: string,
         price: number,
@@ -12,8 +13,9 @@ interface Props {
 
 
 export const Shop: FunctionalComponent<Props> = props => {
-
-    const [ coins, setCoins ] = useState(10);
+    
+    const $wealth = useStore(wealth);
+    //const [ coins, setCoins ] = useState(wealth);
     const [ stock, setStock ] = useState<{[index: number]: number}>(
                                     props.stock.reduce(
                                         (acc, item, index) => ({...acc, [index]: item.amount}), {}));
@@ -21,10 +23,12 @@ export const Shop: FunctionalComponent<Props> = props => {
     const handleBuy = useCallback((index: number) => {
         const item = props.stock[index];
 
-        setCoins(coins => coins - item.price);
+        // const coinsLeft = subWealth({id: "coins", quantity: item.price })
+        // console.log('coinsLeft', coinsLeft)
+        substractWealth({id: "coins", quantity: item.price});
         setStock(stock => ({...stock, [index]: stock[index] - 1}));
-
-    }, [ setCoins, setStock ]);
+        addInventoryItem({id: item.name, name: item.name});
+    }, [ setStock ]);
 
 
     return <>
@@ -46,7 +50,7 @@ export const Shop: FunctionalComponent<Props> = props => {
                         <td>
                             <button
                                 className="bg-amber-600 p-1"
-                                disabled={ stock[index] <= 0 || item.price > coins }
+                                disabled={ stock[index] <= 0 || item.price > $wealth["coins"].quantity }
                                 onClick={ () => { handleBuy(index); } }
                             >
                                 Buy
@@ -56,6 +60,6 @@ export const Shop: FunctionalComponent<Props> = props => {
                 ) }
             </tbody>
         </table>
-        <p>You have { coins }🪙 left</p>
+        <p>You have { $wealth["coins"].quantity }🪙 left</p>
     </>;
 }

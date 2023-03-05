@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import {Frontmatter} from "../models";
+import type {Frontmatter} from "../models";
 
-const stories = await Astro.glob<Frontmatter>('./stories/*.mdx')
+const stories = await Astro.glob<Frontmatter>('./stories/**/*.mdx')
 ---
 
 <Layout title="Welcome to Astro.">
